@@ -50,7 +50,8 @@
 
 - (void) initController
 {
-    
+    //Force logout on init application
+    [[Digits sharedInstance]logOut];
     self.sessionActive = NO;
     
     //Shadow of header
