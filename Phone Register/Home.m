@@ -25,5 +25,9 @@
 }
 
 - (IBAction)btnSignInWithFabricPressed:(id)sender {
+    
+    UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Phone Register" message:@"Add your phone number" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+    
+    [a show];
 }
 @end
