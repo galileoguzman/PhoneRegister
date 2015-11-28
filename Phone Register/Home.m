@@ -12,6 +12,7 @@
 @interface Home ()
 
 @property (nonatomic) UIAlertView *a;
+@property (nonatomic) BOOL *sessionActive;
 
 @end
 
@@ -43,6 +44,18 @@
 
     */
     
+    [self initController];
+}
+
+- (void) initController
+{
+    self.sessionActive = NO;
+    
+    self.lblHeader.layer.masksToBounds = NO;
+    self.lblHeader.layer.shadowOffset = CGSizeMake(-15, 5);
+    self.lblHeader.layer.shadowRadius = 5;
+    self.lblHeader.layer.shadowOpacity = 0.5;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,20 +64,33 @@
 }
 
 - (IBAction)btnSignInWithFabricPressed:(id)sender {
-    
+
     [[Digits sharedInstance] authenticateWithCompletion:^(DGTSession *session, NSError *error) {
-        // Inspect session/error objects
-        NSLog(@"Session Obj %@", [session phoneNumber]);
-        
-        if(error){
+        if (!self.sessionActive) {
+            if(error){
+                
+                self.a = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error while you sign in with Phone Number" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+                
+            }else{
+                
+                NSLog(@"User is logged");
+                
+                self.sessionActive = YES;
+                self.imgSession.image = [UIImage imageNamed:@"close.png"];
+                self.lblPhoneNumber.text = [session phoneNumber];
+                self.a = [[UIAlertView alloc] initWithTitle:@"Welcome" message:@"Welcome to our great app with Fabric.io" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+            }
             
-            self.a = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error while you sign in with Phone Number" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-            
+            [self.a show];
         }else{
-            self.a = [[UIAlertView alloc] initWithTitle:@"Welcome" message:@"Welcome to our great app with Fabric.io" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+            
+            NSLog(@"User closed session");
+            self.sessionActive = NO;
+            self.imgSession.image = [UIImage imageNamed:@"1448704102_10.png"];
+            self.lblPhoneNumber.text = nil;
+            [[Digits sharedInstance]logOut];
+            
         }
-        
-        [self.a show];
     }];
 }
 @end

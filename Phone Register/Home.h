@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface Home : UIViewController
+@property (strong, nonatomic) IBOutlet UILabel *lblHeader;
 
+@property (strong, nonatomic) IBOutlet UILabel *lblPhoneNumber;
 - (IBAction)btnSignInWithFabricPressed:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *imgSession;
 
 @end
 
