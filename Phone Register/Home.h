@@ -10,6 +10,7 @@
 
 @interface Home : UIViewController
 
+- (IBAction)btnSignInWithFabricPressed:(id)sender;
 
 @end
 
