@@ -13,6 +13,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblHeader;
 
 @property (strong, nonatomic) IBOutlet UILabel *lblPhoneNumber;
+
+@property (strong, nonatomic) IBOutlet UIButton *btnSession;
+
 - (IBAction)btnSignInWithFabricPressed:(id)sender;
 @property (strong, nonatomic) IBOutlet UIImageView *imgSession;
 

@@ -21,6 +21,8 @@
 		F234778B1C09750B006B8BE6 /* TwitterCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F23477871C09750B006B8BE6 /* TwitterCore.framework */; };
 		F234778D1C098211006B8BE6 /* SFY-beyr.png in Resources */ = {isa = PBXBuildFile; fileRef = F234778C1C098211006B8BE6 /* SFY-beyr.png */; };
 		F234778F1C0985C7006B8BE6 /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = F234778E1C0985C7006B8BE6 /* close.png */; };
+		F23477921C099531006B8BE6 /* closeSession.png in Resources */ = {isa = PBXBuildFile; fileRef = F23477901C099531006B8BE6 /* closeSession.png */; };
+		F23477931C099531006B8BE6 /* openSession.png in Resources */ = {isa = PBXBuildFile; fileRef = F23477911C099531006B8BE6 /* openSession.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		F23477871C09750B006B8BE6 /* TwitterCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterCore.framework; sourceTree = "<group>"; };
 		F234778C1C098211006B8BE6 /* SFY-beyr.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SFY-beyr.png"; sourceTree = "<group>"; };
 		F234778E1C0985C7006B8BE6 /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		F23477901C099531006B8BE6 /* closeSession.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = closeSession.png; sourceTree = "<group>"; };
+		F23477911C099531006B8BE6 /* openSession.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openSession.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 		F21428941C095BAE007143E7 /* Media */ = {
 			isa = PBXGroup;
 			children = (
+				F23477901C099531006B8BE6 /* closeSession.png */,
+				F23477911C099531006B8BE6 /* openSession.png */,
 				F234778E1C0985C7006B8BE6 /* close.png */,
 				F234778C1C098211006B8BE6 /* SFY-beyr.png */,
 				F21428951C095BBB007143E7 /* 1448704102_10.png */,
@@ -201,7 +207,9 @@
 				F234778D1C098211006B8BE6 /* SFY-beyr.png in Resources */,
 				F21428871C094DFB007143E7 /* Assets.xcassets in Resources */,
 				F234778F1C0985C7006B8BE6 /* close.png in Resources */,
+				F23477921C099531006B8BE6 /* closeSession.png in Resources */,
 				F21428821C094DFB007143E7 /* Main.storyboard in Resources */,
+				F23477931C099531006B8BE6 /* openSession.png in Resources */,
 				F21428961C095BBB007143E7 /* 1448704102_10.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

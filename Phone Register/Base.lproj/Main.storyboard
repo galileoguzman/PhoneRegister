@@ -21,17 +21,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1448704102_10.png" id="jNr-Ue-wIc">
-                                <rect key="frame" x="240" y="126" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="i1e-uA-yr8" userLabel="btnSignIn">
-                                <rect key="frame" x="240" y="126" width="80" height="80"/>
+                                <rect key="frame" x="239.99999970197675" y="131" width="70" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.25538870159999999" green="0.67668784640000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="btnSignInWithFabricPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Vm-IL-pfX"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="openSession.png" id="jNr-Ue-wIc">
+                                <rect key="frame" x="255.00000004656613" y="146" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rEN-he-luw">
                                 <rect key="frame" x="39" y="260" width="261" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -50,6 +51,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="btnSession" destination="i1e-uA-yr8" id="4JM-RN-vfP"/>
                         <outlet property="imgSession" destination="jNr-Ue-wIc" id="LVX-DN-LcT"/>
                         <outlet property="lblHeader" destination="wf5-uf-nHF" id="SYl-er-ciU"/>
                         <outlet property="lblPhoneNumber" destination="rEN-he-luw" id="O8J-j3-FfL"/>
@@ -61,6 +63,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1448704102_10.png" width="128" height="128"/>
+        <image name="openSession.png" width="128" height="128"/>
     </resources>
 </document>

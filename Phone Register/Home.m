@@ -44,18 +44,30 @@
 
     */
     
+    
     [self initController];
 }
 
 - (void) initController
 {
+    
     self.sessionActive = NO;
     
+    //Shadow of header
     self.lblHeader.layer.masksToBounds = NO;
     self.lblHeader.layer.shadowOffset = CGSizeMake(-15, 5);
     self.lblHeader.layer.shadowRadius = 5;
     self.lblHeader.layer.shadowOpacity = 0.5;
     
+    //Button session style
+    self.btnSession.layer.masksToBounds = YES;
+    self.btnSession.layer.cornerRadius = self.btnSession.frame.size.height / 2.0f;
+    
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -76,7 +88,7 @@
                 NSLog(@"User is logged");
                 
                 self.sessionActive = YES;
-                self.imgSession.image = [UIImage imageNamed:@"close.png"];
+                self.imgSession.image = [UIImage imageNamed:@"closeSession.png"];
                 self.lblPhoneNumber.text = [session phoneNumber];
                 self.a = [[UIAlertView alloc] initWithTitle:@"Welcome" message:@"Welcome to our great app with Fabric.io" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
             }
@@ -86,7 +98,7 @@
             
             NSLog(@"User closed session");
             self.sessionActive = NO;
-            self.imgSession.image = [UIImage imageNamed:@"1448704102_10.png"];
+            self.imgSession.image = [UIImage imageNamed:@"openSession.png"];
             self.lblPhoneNumber.text = nil;
             [[Digits sharedInstance]logOut];
             
