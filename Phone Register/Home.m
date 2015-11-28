@@ -11,6 +11,8 @@
 
 @interface Home ()
 
+@property (nonatomic) UIAlertView *a;
+
 @end
 
 @implementation Home
@@ -20,7 +22,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     // add button to sign in with fabric
-    
+    /*
     DGTAuthenticateButton *authButton;
     authButton = [DGTAuthenticateButton buttonWithAuthenticationCompletion:^(DGTSession *session, NSError *error) {
         if (session.userID) {
@@ -39,7 +41,7 @@
     authButton.center = self.view.center;
     [self.view addSubview:authButton];
 
-    
+    */
     
 }
 
@@ -50,8 +52,19 @@
 
 - (IBAction)btnSignInWithFabricPressed:(id)sender {
     
-    UIAlertView *a = [[UIAlertView alloc] initWithTitle:@"Phone Register" message:@"Add your phone number" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-    
-    [a show];
+    [[Digits sharedInstance] authenticateWithCompletion:^(DGTSession *session, NSError *error) {
+        // Inspect session/error objects
+        NSLog(@"Session Obj %@", [session phoneNumber]);
+        
+        if(error){
+            
+            self.a = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error while you sign in with Phone Number" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+            
+        }else{
+            self.a = [[UIAlertView alloc] initWithTitle:@"Welcome" message:@"Welcome to our great app with Fabric.io" delegate:self cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+        }
+        
+        [self.a show];
+    }];
 }
 @end
